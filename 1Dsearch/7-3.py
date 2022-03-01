@@ -50,6 +50,9 @@ def FibonacciSearch(func, start, end, precision, epsilon):
     fbk = func(bk)
 
     while (y>2):
+        temp = x
+        x = y - x
+        y = temp
         if (fak <= fbk):
             end = bk
             bk,fbk = ak,fak
@@ -62,9 +65,6 @@ def FibonacciSearch(func, start, end, precision, epsilon):
             fbk = func(bk)
         a.append(start)
         b.append(end)
-        temp = x
-        x = y - x
-        y = temp
     
     if (y==2):
         ak = (start+end)/2 - epsilon*(end-start)
